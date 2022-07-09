@@ -1,0 +1,12 @@
+
+.cardHeader img {
+    width: 100vw;
+    height: 250px;
+    
+}
+
+@media only screen and (max-width: 680px) {
+    .cardHeader img {
+        display: none;
+    }
+  }
