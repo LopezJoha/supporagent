@@ -1,21 +1,38 @@
 import React, {useState} from 'react'; 
 import './App.css';
 import Header from './components/Header';
+import Imgs from './components/Imgs';
+
 
 function App() {
   const [url, setUrl] = useState('');  
+
+  const getCsv = async function(){     
+    const rawResponse = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify()
+  });    
+
+    const content = await rawResponse.json();      
+    const csvData = objectToCsv(content);      
+     download(csvData)
+    return csvData
+  };
   
   const objectToCsv = function(data) {   
     const csvRows = [];    
-    const headers = Object.keys(data[0]); // get the headers 
+    const headers = Object.keys(data[0]); // Obtenemos los titulos de las columnas
     const newHeaders = headers.filter(find => {
       return find !== "client_details"
     });
-    newHeaders.push('orders_count');
-    
+    newHeaders.push('orders_count');    
     csvRows.push(newHeaders.join(';'))
 
-    for (let order of data) { // loop over the rows
+    for (let order of data) { // Recorremos las filas
         let values = newHeaders.map(header => {   
           switch(header){
             case 'customer': return "\""+(''+order["customer"]["first_name"]+" "+order["customer"]["last_name"]).replace(/"/g, '\\"')+"\""
@@ -24,10 +41,9 @@ function App() {
           } 
         });    
           
-       csvRows.push(values.join(';'));  
-    }
-      
-    return csvRows.join('\n');  // form escaped comma separated values  
+       csvRows.push(values.join(';'));
+      }
+      return csvRows.join('\n');  // Separamos los valores con un salto de linea
   };
 
   const download = function(data){
@@ -42,23 +58,7 @@ function App() {
     document.body.removeChild(a);
   };
 
-  const getCsv = async function(){     
-      const rawResponse = await fetch(url, {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify()
-    });
-    
-    const content = await rawResponse.json();
-      content.map( row => ({}));
-      const csvData = objectToCsv(content);
-      
-       download(csvData)
-      return csvData
-  };
+  
 
   return (
     <div className="App">       
@@ -69,10 +69,10 @@ function App() {
             value = {url}
             onChange = {(e) => setUrl(e.target.value)}
             placeholder = "Ingrese la URL de la API" 
-            onSubmit={getCsv}
           />             
-          <button onClick={getCsv}>Descargar CSV </button> 
-        </div>    
+          <button className='submitButton' onClick={getCsv}>Descargar CSV </button> 
+        </div> 
+        <Imgs/>
       </div>
   );
 }

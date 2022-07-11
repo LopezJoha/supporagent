@@ -1,0 +1,72 @@
+.active {
+    border: 2px solid #1db9b9;
+    transform: scale(1.3);
+    transition: all 300ms;
+}
+
+.App-Imgs {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-content: center;
+align-items: center;
+width: 50vw;
+padding-top: 2.5rem;
+margin: auto;
+}
+  
+.slideshow {
+    position: relative;
+}
+  
+.mainImg {
+    transition: all 500ms;
+    height: 500px;
+    width: 75vw;
+}
+
+.Subtitle {
+    font-size: 2em;
+    color: #001059;
+}
+  
+.actions {
+    position: absolute;
+    top: 50%;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+}
+  
+.actions, button {
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    padding-top: 10px;
+    margin: 5px;
+    border-radius: 15px;
+    padding-top: 5px;
+}
+  
+.actions, button:active {
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    padding-top: 10px;
+    margin: 5px;
+    border-radius: 15px;
+    padding-top: 5px;
+}
+
+.tumbnail {
+    padding-top: 2.5rem;
+}
+
+
+.button-wrapper {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    padding: 0;
+    top: 33%;
+}

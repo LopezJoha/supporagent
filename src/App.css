@@ -100,7 +100,7 @@ input::placeholder {
   text-align: center;
 }
 
-button{
+.submitButton{
   font-size: 1.2em;
   font-weight:bold;
   color: #FFFFFF;
@@ -117,7 +117,7 @@ button{
 }
  
 
-button:hover{
+.submitButton:hover{
   background-color: #dce6f0;
   color: #ff0152;
   border: solid 3px  #ff0152;
