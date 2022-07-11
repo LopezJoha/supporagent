@@ -6,7 +6,7 @@
 }
 
 @media only screen and (max-width: 680px) {
-    .cardHeader img {
+    .cardHeader, .Subtitle {
         display: none;
     }
   }

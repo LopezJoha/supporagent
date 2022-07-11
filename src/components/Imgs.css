@@ -42,24 +42,28 @@ margin: auto;
     border: none;
     cursor: pointer;
     padding: 10px;
-    padding-top: 10px;
     margin: 5px;
     border-radius: 15px;
-    padding-top: 5px;
 }
   
 .actions, button:active {
     border: none;
     cursor: pointer;
     padding: 10px;
-    padding-top: 10px;
     margin: 5px;
     border-radius: 15px;
-    padding-top: 5px;
 }
 
 .tumbnail {
-    padding-top: 2.5rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.tumbnail img {
+    cursor: pointer;
 }
 
 
@@ -70,3 +74,9 @@ margin: auto;
     padding: 0;
     top: 33%;
 }
+
+@media only screen and (max-width: 680px) {
+    .slideshow {
+        display: none;
+    }
+  }

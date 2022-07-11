@@ -9,7 +9,7 @@ const Thumbnail = ({ arr, image, index }) => {
       arr.map((imgsrc, i) => (
         <img
           key={i}
-          height="50"
+          height="60"
           src={imgsrc}
           onClick={() => image(i)}
           className={index === i ? 'active' : ''}
@@ -43,13 +43,11 @@ const Slideshow = ({ imgs }) => {
   }
 
   return (
+    
     <div className="slideshow">
-      <img className="mainImg" src={imgs[index]} alt='Img' />
-      <div className="actions button-wrapper">
-        <button  onClick={prev}><img src={images.before} alt='Img'></img></button>
-        <button  onClick={next}><img src={images.next} alt='Img'></img></button> 
-      </div>
       <Thumbnail arr={imgs} image={setIndex} index={index} />
+      <img className="mainImg" src={imgs[index]} alt='Img' />
+      <div className="actions button-wrapper"></div>
     </div>
   )
 }

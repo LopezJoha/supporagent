@@ -101,6 +101,9 @@ input::placeholder {
 }
 
 .submitButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 1.2em;
   font-weight:bold;
   color: #FFFFFF;
@@ -108,12 +111,13 @@ input::placeholder {
   min-width: 200px;
   margin-top: 3em;
   height: 3em;
-  padding: 1em,0,0 1em;
   border-radius: 8px;
   background-color: #001059;
   cursor: pointer;
   border: solid 2px  #001059;
   transform: skew(-8deg);
+  text-align: center;
+ 
 }
  
 
