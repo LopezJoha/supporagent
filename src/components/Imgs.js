@@ -44,10 +44,9 @@ const Slideshow = ({ imgs }) => {
 
   return (
     
-    <div className="slideshow">
-      <Thumbnail arr={imgs} image={setIndex} index={index} />
-      <img className="mainImg" src={imgs[index]} alt='Img' />
-      <div className="actions button-wrapper"></div>
+    <div className="slideshow">      
+      <img className="mainImg" src={imgs[index]} alt='Img' />   
+      <Thumbnail arr={imgs} image={setIndex} index={index} />   
     </div>
   )
 }

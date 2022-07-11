@@ -30,29 +30,6 @@ margin: auto;
     color: #001059;
 }
   
-.actions {
-    position: absolute;
-    top: 50%;
-    width: 95%;
-    display: flex;
-    justify-content: space-between;
-}
-  
-.actions, button {
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    margin: 5px;
-    border-radius: 15px;
-}
-  
-.actions, button:active {
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    margin: 5px;
-    border-radius: 15px;
-}
 
 .tumbnail {
     padding-top: 1rem;
